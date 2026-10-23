@@ -1,0 +1,22 @@
+# Jarvis runtime state (search index, hook timestamps)
+.state/
+backups/
+ACTIVITY.md
+
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+
+# Personal notes
+personal/
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+__pycache__/
+*.swp

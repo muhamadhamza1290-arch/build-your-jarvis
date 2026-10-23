@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/activity.sh\"", "timeout": 20 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read",
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/file-guard.sh\"", "timeout": 10 }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/activity.sh\"", "timeout": 20 },
+          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/status-check.sh\"", "timeout": 15 }
+        ]
+      }
+    ]
+  }
+}
